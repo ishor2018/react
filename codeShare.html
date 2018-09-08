@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title of page</title>
+</head>
+<body>
+<h1>CONTENT OF PAGE</h1>
+
+
+<input type="text" id="name" onkeyup="print()">
+<button onmouseover ="print()">Submit</button>
+<h1 id="print-div">Hello ... </h1>
+
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+
+
+
+======================== main.js ==================
+
+	// 2 and 3 
+	// var a = 2
+	// var b 
+	// b = 3
+	
+	// var sum = a + b
+	// console.log(sum)
+
+
+
+	// var name = 'Ram Tako'
+
+	// alert(name)
+	// console.log('Hello ' + name)
+	// document.write('hello: ' + name)
+
+
+	// postfix and prefix
+function postPreFix() {
+		var a = 3
+	console.log('actual value of a: ' + a)	// 3
+	++a 
+	console.log('print after prefix ++a: ' + a)   // 4
+	console.log('print with prefix ++a: ' + ++a)	// 5
+	a++
+	console.log('postfix a++: ' + a)			//6
+	console.log('print with postfix a++: ' + a++)	//6
+	console.log('print after postfix a: ' + a)	//7
+}
+
+postPreFix();
+
+
+	
+	// document.write('asdf    | ')
+	// document.write('asdf    | ')
+	// document.write('asdf    | ')
+	// document.write('asdf    | ')
+	// document.write('asdf    | ')
+
+
+	// // LOOP
+
+	// // document.write('asdf    | ')
+	// // debugger   // you must open console to see this
+	// document.write('<p> using loop <p>')
+	// for(i = 0; i < 5; i++) {
+	// 	document.write('asdf    | <br>')
+	// }
+
+
+	function print(){
+		// console.log(document)
+		var userName = document.getElementById('name').value
+		// console.log(userName)
+		document.getElementById('print-div').innerHTML = 'Hello ' + userName;
+	}
+
+
