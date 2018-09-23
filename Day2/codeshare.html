@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title of page</title>
+</head>
+<body>
+<h1>CONTENT OF PAGE</h1>
+
+<input type="text" id="name">
+<!-- <button onmouseover ="">Submit</button> -->
+<h1 id="print-div">Hello ... </h1>
+
+<!-- <script type="text/javascript" src="day-2.js"></script> -->
+<script type="text/javascript" src="day-2-oop.js"></script>
+<script type="text/javascript">
+for (var i = 0; i <= 20; i++) {
+
+}
+
+// var i = 0;
+// while(i <= 20){
+// 	console.log(i);
+// 	i++;
+// }
+
+// // while loop example
+// var phoneNumber = 9849283738;
+// while(phoneNumber != 0) {
+// 	var rem = phoneNumber % 10;
+// 	phoneNumber = Math.floor(phoneNumber / 10);
+// 	console.log(rem)
+// }
+
+// var count = 20;
+// do {
+// 	console.log('Do while loop: ', count)
+// } while(count < 10);
+
+// while(count < 10) {
+// 	console.log('while loop: ', count);
+// }
+
+
+// var dollar = 118.89;
+// if(dollar < 100) {
+// 	console.log('Low dollar price')
+// } else if(dollar > 105 && dollar < 110){
+// 	console.log('medium dollar price')
+// } else {
+// 	console.log('high dollar price')
+// }
+
+
+// // && and || 
+	// true && true
+	// true
+	// true && false 
+	// false
+	// true || true
+	// true
+	// true || false
+	// true
+	// true || false || false ||false
+	// true
+	// true && true && true 
+	// true
+	// true && true && true && false
+	// false
+
+// var dollar = 118.89;
+// if(dollar < 100) {
+// 	console.log('Low dollar price')
+// } else if(dollar > 105 || dollar < 110){
+// 	console.log('medium dollar price')
+// } else {
+// 	console.log('high dollar price')
+// }
+
+
+// var dollar = 118.89;
+// if(dollar < 100) {
+// 	console.log('Low dollar price')
+// }
+// if(dollar > 105){
+// 	console.log('medium dollar price')
+// }
+// if(dollar > 118) {
+// 	console.log('high dollar price')
+// }
+	
+</script>
+
+</html>
+
+
+
+
+=======================
+file:   day-2.js
+
+// var userInput = 200;
+
+// function balanceCheck() {
+// 	var availableBal = 400;
+// 	var userInput = 200;
+	
+// 	if(userInput < availableBal) {
+// 		console.log('You can get money')
+// 	} else {
+// 		console.log('you cannot get money')
+// 	}
+// }
+
+var userName = 'Alex';
+var password = 'asdf'
+// userCreation(userName, password);
+
+function userCreation(user, password) {   // fucntion with parameter
+	console.log('.... successfully user created ' + user + " : " + password)
+}
+
+
+var username = ''
+var password = 'asdf'
+login(username, password);
+
+function login(username, password) {
+	console.log('username: ' , username)
+	console.log('password: ' , password)
+
+	if(isValid(username)) {
+		//server call
+		console.log('sending request to server')
+	} else {
+		console.log('validation error... user name cannot be empty')
+	}
+}
+
+function isValid(username) {     // function with return
+	// ==== 
+
+		// 2 == 2
+		// true
+		// 3 == 1
+		// false
+		// 3 == '3'
+		// true
+		// 3 === '3'
+		// false
+		// parseInt(3)
+		// 3
+		// parseInt('3')
+		// 3
+		// 3 == parseInt('3')
+		// true
+		// 3 === "3"
+		// false
+		// 3 == "3"
+		// true
+	/// code refactor
+	console.log('I am in isValid function')
+	// if(username.length === 0) {
+	// 	console.log('username is empty')
+	// 	return false
+	// } else {
+	// 	console.log('username is not empty')
+	// 	return true;
+	// }
+
+	return username.length !== 0;
+
+}
+
+
+
+
+
+================================
+file: day-2-oop.js
+
+
+/**
+
+1. Class
+2. Object
+	2.1 Property
+	2.2 Method
+
+
+3. Encapsulation / Abstraction
+4. Inheritance
+5. Polymorphism
+
+*/
+
+
+// Person 
+// 	name
+// 	age
+// 	citizenshipnumber
+
+// Hari is a person
+
+// Hari is a Person
+// 	job
+// 	salary
+
+// Shyam is a person
+// 	job
+// 	salary
+
+
+
+// Shyam.salary === hari.salary
+
+
+// class & object
+// class Person {
+// 	name
+// 	age
+// 	citizenshipnumber
+
+// 	eat()
+// 	sleep()
+// 	walk()
+// }
+
+// class Hari extends Person {
+// 	// properties
+// 		// name
+// 		// age
+// 		// citizenshipnumber   <= these all from person
+// 		job
+// 		salary
+// 		dob
+
+// 	// method
+// 	getAge() {
+// 		return today() - dob()
+// 	}
+
+// 	gotoOffice() {
+// 		console.log('Going to office')
+// 	}
+// }
+
+
+// class Vehicle {
+// 	// access modifier
+
+// 	protected color
+// 	private wheel
+// 	engine
+
+// 	public getWheel() {
+// 		return this.wheel;
+// 	}
+// 	accelerate()
+// 	start() {
+// 		engine lai on gardey
+// 	}
+// 	stop() {
+// 		engine lai off gardey
+// 	}
+// }
+
+// var vechicle = new Vechicle()
+// vechicle.wheel = 4;  // paudaina
+// vechicle.getWheel();
+
+// class Car extends Vechicle {
+// 	// wheel chai aaudaina
+
+// }
+
+// var mustang = new Car();
+// var audi = new Car();
+
+// mustang.color = 'red'
+// audi.color = 'black'
+
+
+// function person() {  /// function - small p
+
+// }
+
+
+// static
+// function Person () {		// class - capital P
+// 	this.name = 'asdf'
+// 	this.age = 34
+
+// 	this.getAge = function () {
+// 		return this.age;
+// 	}
+// }
+
+// var person = new Person()
+// console.log(person.getAge()) // 34
+// console.log(person.name);
+
+
+// create object with constructor
+function Person (name, age ) {
+	this.name = name;
+	this.age = age
+}
+
+var person1 = new Person('Mike', 56)
+console.log(person1.name);
+
+var person2 = new Person('Alex', 56)
+console.log(person2.name);
+
+
+// Sending function as parameter
+// function hello(anotherFunction) {
+// 	anotherFunction()
+// }
+
+// var functionInVariable = function print() {
+// 	console.log('i am print function')
+// }
+
+// hello(functionInVariable);
+

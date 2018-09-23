@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day2</title>
+</head>
+<body>
+<h2>Enter Your Balance</h2>
+<input type="text" onkeyup="check()" id="balance">
+<div id="printval"></div>
+</body>
+
+<script type="text/javascript">
+	function check(){
+		var price = document.getElementById( 'balance' ).value;
+		console.log( price );
+		if( price < 500 ){
+			document.getElementById('printval').innerHTML = 'Hi, You have enough balance. Your balance is ' + price;
+		}else{
+			document.getElementById('printval').innerHTML = 'Hi, You have not enough balance. Your balance is ' + price;
+		}
+	}
+</script>
+
+</html>

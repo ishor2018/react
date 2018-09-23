@@ -1,0 +1,258 @@
+file: js-css.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div1 {
+	      	height: 100px;
+		    width: 100%;
+		    border: 1px solid red;
+		}
+
+	</style>
+</head>
+<body>
+<!-- <h1 id="heading-title">This is heading title</h1> -->
+
+<div id="div1" style="margin-left: 0px; position: relative;">
+<div class="div2" style="position: absolute; right: 0px">asdf</div>
+</div>
+
+<script type="text/javascript">
+	// document.getElementById("heading-title").style.color = 'red';
+	// document.getElementById("heading-title").style.backgroundColor = 'green';
+
+
+	//setTimeout    => kati pachi run garney
+	// setInterval  => call garirakheny in certain time duration
+
+
+	// setTimeout(function(){
+	// 	console.log('I will print after 3 sec')
+	// }, 3000)
+
+	// setInterval(function() {
+	// 	console.log('I will print in every sec')
+	// }, 1000)
+
+	var count = 0;
+	function slide() {
+		count = count + 20;
+		
+		
+		document.getElementById("div1").style.marginLeft = parseInt(document.getElementById("div1").style.marginLeft) + 5 + 'px';
+
+		if(parseInt(document.getElementById("div1").style.marginLeft) > 200) {
+			document.getElementById("div1").style.marginLeft = '0px'
+		}
+	}
+
+	setInterval(function() {
+		slide();
+	}, 100)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+==================
+file: array.html
+=================
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+
+	// var country = "nepal";
+	// var countries = ["nepal", "india", "china"];
+
+	//    // 2	  2   	  2      2
+	// // [ X001 | X002 | X003 | X004 ]
+	// // ["nepal", "india", "china"]
+	//    // 0		1		  2	
+
+	//   // console.log(countries[2])
+
+	//   countries.forEach(country => console.log(country))
+
+	//   // countries.forEach(function(country, index){
+	//   // 	console.log(country + ' : ' + index)
+	//   // })
+
+	//   var numbers = [1,2,3,4,5]
+	//   var squares = numbers.map(num => num*num)
+	//   console.log(squares)
+
+
+	  // var filtered = numbers.filter(number => number < 3)
+	//   console.log(filtered)
+
+
+	var alphabet = ["a", "b", "c", "d"]
+	// alphabet.pop()
+	// console.log(alphabet)
+	// alphabet.push("c")
+	// console.log(alphabet)
+
+
+	// var selected = alphabet.slice();
+	var selected = [...alphabet]; // new spread
+	// selected.pop();
+	// selected.push("e")
+
+	console.log('selected: ', selected);   // a, b, c
+	console.log('alphabet: ',alphabet);   //a, b, c, d
+
+
+
+	</script> 
+</body>
+</html>
+
+
+
+
+===========
+file: object.html
+==========
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div id="question"></div>
+<div id="option1"></div>
+<div id="option2"></div>
+<div id="option3"></div>
+<div id="option4"></div>
+
+<div id="timer"></div>
+
+<script type="text/javascript">
+		
+	// asdf = () => {
+	// 	console.log(a)
+	// 	let c = 4;    //let
+	// 	for (let i = 0; i < 10; i++) {
+	// 			var a = 4;  // hoisting
+	// 			let b = 41;
+	// 			c = 45
+	// 	}
+	// 	console.log(a);
+	// 	console.log(b);
+	// 	console.log(c);
+
+	// }
+	// asdf();
+
+
+	// print = (name, age) => {    		// arrow function
+	// 	console.log('hello ' + name)
+	// }
+
+	// function print(name, age) {
+	// 	console.log('hello ' + name)
+	// }
+
+
+	let student  // name, address, age, contact, class, faculty etc
+	student = {
+		name: 'Alex',
+		address: 'Kathmandu',
+		age: 23,
+		contact: '9823412313'
+	}
+
+	// // console.log(Object.keys(student).forEach(student => console.log(student)))
+
+	// // let students = [student, student]
+	// // console.log(students)
+
+
+
+	// let name = student.name
+	// let address = student.address
+
+	// let { name, address, age } = student;		// es6 object destructing   // ekdamai use huncha react ma
+
+	// console.log('name of student is ' + name + ' and address is ' + address);
+	// console.log(`name of student is ${name}  and address is  ${address} ${age}`);   // new es6 string literal
+
+
+	let question1 = {
+		question: 'What is the capital city of Nepal?',
+		options: [ 'Pokhara', 'kathmandu', 'Dharan', 'Nepalgunj'],
+		correctAnswer: 'Kathmandu'
+	}
+
+	let question2 = {
+		question: 'What is the capital city of India?',
+		options: [ 'Pokhara', 'kathmandu', 'New Dehli', 'Nepalgunj'],
+		correctAnswer: 'New Dehli'
+	}
+
+	let questions = [question1, question2]
+
+
+
+
+	askQuestion = () => {
+		let { question, options } = questions[0];
+		document.getElementById("question").innerHTML = question;
+
+		let [option1, option2, option3, option4] = questions[0].options    // es6 array destructing
+		
+
+		document.getElementById("option1").innerHTML = option1;
+		document.getElementById("option2").innerHTML = option2;
+
+		displayTimer()
+
+	}
+
+	displayTimer = () => {
+		let count = 0;
+		let id = setInterval(() => {
+			document.getElementById("timer").innerHTML = ++count;
+
+			if(count === 10){
+				// game over
+				clearInterval(id)
+			} else if (count === 6) {
+				document.getElementsByTagName('body')[0].style.background = 'red' 
+			}
+		}, 1000)
+	}
+
+	askQuestion()
+
+</script>
+
+
+
+</body>
+</html>
